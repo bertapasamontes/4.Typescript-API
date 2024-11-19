@@ -17,6 +17,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "bulma": "^1.0.2"
+    "bulma": "^1.0.2",
+    "openmeteo": "^1.1.4"
   }
 }
