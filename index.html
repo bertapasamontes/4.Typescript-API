@@ -12,12 +12,22 @@
 <body class="container m-6">
     <h1 class="title is-1 is-flex is-justify-content-center">
         <span class="subtitle is-5 titulito">S.4. Testing y API</span><br>
-        Generador de chistes de cuñao'</h1>
+        Generador de chistes de cuñao'
+    </h1>
     <section class="box fixed-grid has-1-cols m-auto">
-        
+
         <div class="grid">
-            <div class="cel is-flex is-justify-content-center" id="chiste-contanier"><span id="chiste" ></span></div>
-            <button type="submit" id="btn-siguiente-chiste" class="button cel">Siguiente chiste</button>
+            <div class="cel is-flex is-justify-content-center" id="chiste-contanier"><p id="chiste"></p></div>
+            <form action="" method="get">
+                <label for="botones">Valora el chiste:</label>
+                <select id="valoracion">
+                    <option type="button" value="1" class="button">🤨</option>
+                    <option type="button" value="2" class="button">🙂</option>
+                    <option type="button" value="3" class="button">😆</option>
+                </select>
+                <input type="button" id="btn-siguiente-chiste" class="button cel" value="Siguiente chiste">
+            </form>
+            
         </div>
 
     </section>
