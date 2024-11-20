@@ -1,7 +1,3 @@
-Aquí tens un README en català per al repositori `4.Typescript-API`, seguint els apartats indicats:
-
----
-
 # API amb TypeScript
 
 ## 📄 Descripció
@@ -25,7 +21,7 @@ Aquest projecte és una API desenvolupada en TypeScript, que serveix com a base 
 ## 🛠️ Instal·lació
 1. Clona el repositori:
    ```bash
-   git clone [<url_del_repositori>](https://github.com/bertapasamontes/4.Typescript-API)
+   git clone https://github.com/bertapasamontes/4.Typescript-API
    ```
 2. Instal·la les dependències:
    ```bash
