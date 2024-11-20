@@ -10,17 +10,23 @@
 </head>
 
 <body class="container m-6">
-    <section class="info-meteorologica d-inline">
-        <div class="tiempo-container"><div id="imgLuz"></div><div id="imgTiempo"></div> | <p id="temperatura"></p></div>
+    <section class="info-meteorologica is-flex">
+        <div class="tiempo-container is-inline">
+            <div id="imgTiempo"></div>
+             | <p id="temperatura"></p>
+            <div id="imgLuz"></div>
+        </div>
     </section>
     <h1 class="title is-1 is-flex is-justify-content-center">
         Generador de chistes de cuñao'
     </h1>
-    
+
     <section class="box fixed-grid has-1-cols m-auto">
 
         <div class="grid">
-            <div class="cel is-flex is-justify-content-center" id="chiste-contanier"><p id="chiste"></p></div>
+            <div class="cel is-flex is-justify-content-center" id="chiste-contanier">
+                <p id="chiste"></p>
+            </div>
             <form action="" method="get">
                 <label for="botones">Valora el chiste:</label>
                 <select id="valoracion">
@@ -30,11 +36,12 @@
                 </select>
                 <input type="button" id="btn-siguiente-chiste" class="button cel" value="Siguiente chiste">
             </form>
-            
+
         </div>
 
     </section>
     <script src="dist/index.js" type="module"></script>
+    <script src="dist/index_2.js" type="module"></script>
     <script src="dist/weather.js" type="module"></script>
 </body>
 

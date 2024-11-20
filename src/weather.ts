@@ -28,30 +28,30 @@ const weatherEstados: weatherInterface = {
     1: "https://api.iconify.design/twemoji:sun-behind-small-cloud.svg", //"Mayormente despejado"
     2: "https://api.iconify.design/twemoji:sun-behind-cloud.svg",//"Parcialmente nublado",
     3: "https://api.iconify.design/twemoji:sun-behind-large-cloud.svg",//"Nublado",
-    45: "Neblina",
-    48: "Neblina con escarcha",
-    51: "Lluvia ligera",
-    53: "Lluvia moderada",
-    55: "Lluvia densa",
-    56: "Llovizna helada ligera",
-    57: "Llovizna helada densa",
-    61: "Lluvia leve",
-    63: "Lluvia moderada",
-    65: "Lluvia intensa",
-    66: "Lluvia helada ligera",
-    67: "Lluvia helada intensa",
-    71: "Nevadas ligeras",
-    73: "Nevadas moderadas",
-    75: "Nevadas intensas",
-    77: "Granizo",
-    80: "Lluvias ligeras dispersas",
-    81: "Lluvias moderadas dispersas",
-    82: "Lluvias fuertes dispersas",
-    85: "Nevadas ligeras dispersas",
-    86: "Nevadas fuertes dispersas",
-    95: "Tormenta eléctrica",
-    96: "Tormenta eléctrica con granizo leve",
-    99: "Tormenta eléctrica con granizo fuerte",
+    45:"https://api.iconify.design/solar:fog-line-duotone.svg", //"Neblina",
+    48:"https://api.iconify.design/carbon:wintry-mix.svg", //"Neblina con escarcha",
+    51: "https://api.iconify.design/typcn:weather-shower.svg",//"Lluvia ligera",
+    53: "https://api.iconify.design/fluent:weather-rain-20-filled.svg",//"Lluvia moderada",
+    55: "https://api.iconify.design/fluent:weather-drizzle-48-filled.svg",//"Lluvia densa",
+    56: "https://api.iconify.design/fluent:weather-rain-snow-24-filled.svg",//"Llovizna helada ligera",
+    57: "https://api.iconify.design/fluent:weather-rain-snow-48-filled.svg",//"Llovizna helada densa",
+    61: "https://api.iconify.design/typcn:weather-shower.svg",//"Lluvia leve",
+    63: "https://api.iconify.design/fluent:weather-rain-20-filled.svg",//"Lluvia moderada",
+    65: "https://api.iconify.design/fluent:weather-drizzle-48-filled.svg",//"Lluvia intensa",
+    66: "https://api.iconify.design/fluent:weather-rain-snow-48-filled.svg",//"Lluvia helada ligera",
+    67: "https://api.iconify.design/fluent:weather-rain-snow-48-filled.svg",//"Lluvia helada intensa",
+    71: "https://api.iconify.design/material-symbols-light:weather-snowy.svg",//"Nevadas ligeras",
+    73: "https://api.iconify.design/material-symbols:weather-snowy.svg",// "Nevadas moderadas",
+    75:"https://api.iconify.design/mdi:weather-snowy.svg", //"Nevadas intensas",
+    77: "https://api.iconify.design/mdi:weather-snowy-heavy.svg",//"Granizo",
+    80: "https://api.iconify.design/streamline:interface-weather-rain-1-cloud-rain-rainy-meteorology-precipitation-weather.svg",//"Lluvias ligeras dispersas",
+    81: "https://api.iconify.design/streamline:interface-weather-rain-2-cloud-rain-rainy-meteorology-precipitation-weather.svg",//"Lluvias moderadas dispersas",
+    82: "https://api.iconify.design/ion:rainy-sharp.svg",//"Lluvias fuertes dispersas",
+    85: "https://api.iconify.design/mdi:weather-snowy.svg",//"Nevadas ligeras dispersas",
+    86: "https://api.iconify.design/mdi:weather-snowy-heavy.svg",//"Nevadas fuertes dispersas",
+    95: "https://api.iconify.design/uil:thunderstorm.svg",//"Tormenta eléctrica",
+    96: "https://api.iconify.design/mingcute:thunderstorm-line.svg",//"Tormenta eléctrica con granizo leve",
+    99: "https://api.iconify.design/carbon:thunderstorm-severe.svg",//"Tormenta eléctrica con granizo fuerte",
     100: "???"
 };
 
@@ -87,15 +87,15 @@ fetch(url)
        
         if(diaOnoche == 1){
             console.log("es de dia");
-            imgTiempo.innerHTML = "";
+            imgLuz.innerHTML = "";
             luzImg.src = solOluna[0]; 
-            imgTiempo.appendChild(luzImg);
+            imgLuz.appendChild(luzImg);
         }
         else{
             console.log("es de noche");
-            imgTiempo.innerHTML = "";
+            imgLuz.innerHTML = "";
             luzImg.src = solOluna[1]; 
-            imgTiempo.appendChild(luzImg);
+            imgLuz.appendChild(luzImg);
         }
 
         //tiempo actual
