@@ -1,8 +1,12 @@
+//chistes de más de una api
+
 //variables
 const btnSiguiente = document.getElementById("btn-siguiente-chiste") as HTMLDivElement | null;
 const placeholderChiste = document.querySelector("#chiste-contanier") as HTMLDivElement;
 let chiste = document.getElementById("chiste") as HTMLParagraphElement;
 let valoracion = document.querySelector("#valoracion") as HTMLSelectElement ;
+
+const contenedorGeneral = document.getElementById("contenedor-general") as HTMLDivElement;
 
 let reportAcudits =[{
         joke: "...",
@@ -13,6 +17,10 @@ let reportAcudits =[{
 console.log(reportAcudits);
 
 let puntuacion:number = 0;
+
+
+const coloresPastel =["#FFADAD", "#FFD6A5", "#FDFFB6", "#A0C4FF", "#BDB2FF", "#FFC6FF", "#FFFFFC", "#CAFFBF", "#D7E3FC", "#E8A598", "#FCD2AF"];
+
 
 //si cambia la valoración:
 valoracion.addEventListener("change", (event) => {
@@ -67,11 +75,9 @@ async function llamandoApisRandom() {
         headers:{"Accept": "application/json"}
     })
     .then(res => res.json())
-    .then(chisteChistoso => {
-        console.log("chiste chistoso: ",chisteChistoso[randomApi.type]); return chisteChistoso}) //imprime el chiste por consola y daselo al siguiente .then
     .then(respuesta => {
         chisteNuevo.textContent = respuesta[randomApi.type];
-        console.log("respuesta.type: ", respuesta[randomApi.type]);
+        console.log("chiste: ", respuesta[randomApi.type]);
 
         if (placeholderChiste != null) {
             if (chiste && placeholderChiste.contains(chiste)) {
@@ -83,32 +89,13 @@ async function llamandoApisRandom() {
         }
     }); 
     
+    const randomColor = Math.floor(Math.random()*coloresPastel.length);
+    console.log("random color: ", randomColor);
+
+    contenedorGeneral.style.backgroundColor = coloresPastel[randomColor];
+    
 }
 
-
-
-// function llamandoApiJokes() {
-//     const chisteNuevo = document.createElement("p");
-//     chisteNuevo.setAttribute("id","chiste");
-
-//     //llamando api
-//     fetch("https://icanhazdadjoke.com/",{
-//         headers:{"Accept": "application/json"}
-//     })
-//         .then(res => res.json())
-//         .then(chisteChistoso => {console.log(chisteChistoso.joke); return chisteChistoso}) //imprime el chiste por consola y daselo al siguiente .then
-//         .then(respuesta => {
-//             chisteNuevo.textContent = respuesta.joke;
-//             if (placeholderChiste != null) {
-//                 if (chiste && placeholderChiste.contains(chiste)) {
-//                     placeholderChiste.replaceChild(chisteNuevo, chiste); //reemplaza chiste viejo por nuevo
-//                     chiste = chisteNuevo; //asignamos el chiste nuevo al viejo para poder reemplazarlo al siguiente
-//                 } else {
-//                     placeholderChiste.appendChild(chisteNuevo);//si no hay chiste, añadelo
-//                 }
-//             }
-//         });        
-// }
 
 let llamamientoDeApi = new Promise<void>((resolve, reject) => {
     if (btnSiguiente) {

@@ -1,4 +1,5 @@
 "use strict";
+// chistes de una sola api
 // //variables
 // const btnSiguiente = document.getElementById("btn-siguiente-chiste") as HTMLDivElement | null;
 // const placeholderChiste = document.querySelector("#chiste-contanier") as HTMLDivElement;

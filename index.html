@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme=light>
+<html lang="es" data-theme=light id="contenedor-general">
 
 <head>
     <meta charset="UTF-8">
@@ -9,40 +9,46 @@
     <link rel="stylesheet" href="src/style.css">
 </head>
 
-<body class="container m-6">
-    <section class="info-meteorologica is-flex">
-        <div class="tiempo-container is-inline">
+<body class="m-6">
+    <section class=" info-meteorologica ">
+        <div class="box tiempo-container is-flex is-align-items-center">
             <div id="imgTiempo"></div>
-             | <p id="temperatura"></p>
+            &emsp;| &emsp; <p id="temperatura"></p>
+             &emsp;
             <div id="imgLuz"></div>
         </div>
     </section>
-    <h1 class="title is-1 is-flex is-justify-content-center">
+    <div class="container m-auto pt-6">
+        <h1 class="title is-2 is-flex is-justify-content-center pt-6">
         Generador de chistes de cuñao'
     </h1>
 
-    <section class="box fixed-grid has-1-cols m-auto">
+    <section class=" fixed-grid has-1-cols m-auto">
 
-        <div class="grid">
-            <div class="cel is-flex is-justify-content-center" id="chiste-contanier">
+        <div class="grid ">
+            <div class="cel is-flex is-justify-content-center pt-6" id="chiste-contanier">
                 <p id="chiste"></p>
             </div>
-            <form action="" method="get">
+            <form action="" method="get" class="is-flex is-align-items-center is-flex-direction-column pt-6">
                 <label for="botones">Valora el chiste:</label>
-                <select id="valoracion">
-                    <option type="button" value="1" class="button">🤨</option>
-                    <option type="button" value="2" class="button">🙂</option>
-                    <option type="button" value="3" class="button">😆</option>
+                <select id="valoracion" multiple>
+                    <option type="button" value="1" class="button" id="btn1">🤨</option>
+                    <option type="button" value="2" class="button" id="btn2">🙂</option>
+                    <option type="button" value="3" class="button" id="btn3">😆</option>
                 </select>
-                <input type="button" id="btn-siguiente-chiste" class="button cel" value="Siguiente chiste">
+                <br>
+                <input type="button" id="btn-siguiente-chiste" class="button cel" value="Siguiente chiste casposo">
             </form>
 
         </div>
 
     </section>
-    <script src="dist/index.js" type="module"></script>
+    </div>
+    
+    <!-- <script src="dist/index.js" type="module"></script> -->
     <script src="dist/index_2.js" type="module"></script>
     <script src="dist/weather.js" type="module"></script>
+    <script type="module" src="dist/style.js"></script>
 </body>
 
 </html>

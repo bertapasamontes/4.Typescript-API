@@ -1,5 +1,10 @@
+.tiempo-container{
+    width: fit-content;
+    background-color: #fdfdfd;
+}
+
 select {
-    appearance: none; /* Elimina los estilos predeterminados del select */
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     border: 1px solid #ccc;
@@ -9,4 +14,44 @@ select {
     cursor: pointer;
     border-radius: 5px;
     display: inline-block;
+}
+
+#valoracion{
+    height: 74px;
+    border: none;
+    overflow: hidden;
+}
+#valoracion::-moz-focus-inner {
+    border: 0;
+}
+#valoracion:focus {
+    outline: none;
+}
+#valoracion option{
+    width: 60px;
+    font-size: 1.2em;
+    padding: 10px 0;
+    text-align: center;
+    margin-right: 20px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+
+#chiste{
+    height: 80px;
+}
+
+#btn1:hover{
+    background-image: url("img/cuñao_1.png");
+    background-size: contain;
+}
+#btn2:hover{
+    background-image: url("img/cuñao_2.png");
+    background-size: contain;
+}
+#btn3:hover{
+    background-image: url("img/cuñao_3.png");
+    background-size: contain;
 }
