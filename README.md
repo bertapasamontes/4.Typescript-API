@@ -30,7 +30,6 @@ Aquest projecte és una API desenvolupada en TypeScript, que serveix com a base 
 
 ## ▶️ Execució
 - Llença el servidor local: Live Server Extension
-- Accedeix als endpoints a través de `http://localhost:<port>`.
 
 ## 🌐 Desplegament
 Aquest projecte es pot desplegar en serveis com Vercel. Consulta la [demo en directe](https://4-typescript-api.vercel.app).
