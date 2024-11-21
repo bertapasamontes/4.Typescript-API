@@ -48,19 +48,11 @@ const weatherEstados = {
     100: "???"
 };
 let fecha = new Date().toISOString().slice(0, 13); //dejamos la fecha con la hora pero sin los segundos ni minutos para que ocincida con el formato de la hora de la API
-console.log("fecha:" + fecha);
-console.log("current " + parametros.current[2]);
 fetch(url)
     .then(result => result.json())
     .then((data) => {
-    console.log("Datos del clima:", data);
-    // array de temperatura horaria
-    console.log("Temperaturas horarias:", data.hourly.temperature_2m);
-    console.log("is day:", data.hourly.is_day);
-    console.log("Weather code:", data.daily.weather_code);
     //hora actual
     const horaActual = data.hourly.time.find((tiempo) => tiempo.startsWith(fecha));
-    console.log("tiempo actual: " + horaActual);
     //temperatura actual
     const temperaturaActual = data.hourly.temperature_2m[data.hourly.time.indexOf(horaActual)];
     temperatura.innerText = temperaturaActual + "ºC";
@@ -68,13 +60,11 @@ fetch(url)
     const diaOnoche = data.hourly.is_day[data.hourly.time.indexOf(horaActual)];
     const luzImg = document.createElement("img");
     if (diaOnoche == 1) {
-        console.log("es de dia");
         imgLuz.innerHTML = "";
         luzImg.src = solOluna[0];
         imgLuz.appendChild(luzImg);
     }
     else {
-        console.log("es de noche");
         imgLuz.innerHTML = "";
         luzImg.src = solOluna[1];
         imgLuz.appendChild(luzImg);
@@ -83,12 +73,8 @@ fetch(url)
     const fechaCONdia = new Date().toISOString().slice(0, 10);
     //data.daily.time es un array por lo que usamos findIndex y no indexOf.
     const dailyIndex = data.daily.time.findIndex((tiempo) => tiempo === fechaCONdia);
-    console.log("daily time: " + data.daily.time);
-    console.log("fecha con dia: " + fechaCONdia);
-    console.log("dailyIndex:" + dailyIndex);
     const tiempoActual = data.daily.weather_code[dailyIndex];
     const weatherIconLink = weatherEstados[tiempoActual] || weatherEstados[100];
-    console.log("weahter icon link " + weatherIconLink);
     const weatherImg = document.createElement("img");
     weatherImg.src = weatherIconLink;
     imgTiempo.appendChild(weatherImg);

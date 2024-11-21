@@ -64,7 +64,7 @@ async function llamandoApisRandom() {
     ];
     //elegimos una api del array apis
     const randomApi = apis[Math.floor(Math.random()*apis.length)];
-    console.log("random api: ",randomApi);
+    console.log("random api elegida: ",randomApi);
 
     //varaibles para la web
     const chisteNuevo = document.createElement("p");
