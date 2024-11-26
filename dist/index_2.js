@@ -15,7 +15,8 @@ const placeholderChiste = document.querySelector("#chiste-contanier");
 let chiste = document.getElementById("chiste");
 let valoracion = document.querySelector("#valoracion");
 const contenedorGeneral = document.getElementById("contenedor-general");
-let reportAcudits = [{
+let reportAcudits = [
+    {
         joke: "...",
         score: 1,
         date: ""
@@ -95,20 +96,6 @@ let llamamientoDeApi = new Promise((resolve, reject) => {
     if (btnSiguiente) {
         btnSiguiente.addEventListener("click", () => {
             llamandoApisRandom();
-            if (chiste.textContent) {
-                //añadimos joke a reportAcudits
-                const chisteExistente = reportAcudits.find(item => item.joke === chiste.textContent && item.score !== 0);
-                if (!chisteExistente) {
-                    reportAcudits.push({
-                        joke: chiste.textContent || "",
-                        score: 0, // Última puntuación seleccionada
-                        date: new Date().toISOString(),
-                    });
-                    console.log("chiste nuevo en el array");
-                }
-                puntuacion = 0;
-            }
-            console.log("siguiente chiste", reportAcudits);
         });
         resolve();
     }
